@@ -1,0 +1,17 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root{
+  --bg-input:#24232A;
+  --bg-green:#AFF9BA;
+}
+body{
+  color: #D6D4DC;
+  background: linear-gradient(#222127,#131217 );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
