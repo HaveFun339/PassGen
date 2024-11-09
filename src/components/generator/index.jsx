@@ -82,7 +82,7 @@ export const Generator = () => {
     <>
 
       <div className="generator">
-        <div className="password">Password Generator</div>
+        <div className="password">Password Generator!</div>
         <div className="flex">
           <input className="passwordVisible" ref={ref1} type="text" value={password} readonly /><FaCopy className='facopy' onClick={() => {
             ref1.current.select()
