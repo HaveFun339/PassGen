@@ -1,19 +1,24 @@
 import React, { useState, useRef } from 'react';
 import { FaCopy } from "react-icons/fa";
 import './index.css';
+ const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numberChars = "0123456789";
+  const specialChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 export const Generator = () => {
   const [characterLength, setCharacterLength] = useState(10);
-  const [password, setPassword] = useState("PTx1f5DaFX");
-
-  const [difficulty, setDifficulty] = useState(["EASY", "MEDIUM", "HARD"]);
+  const [count, setCount] = useState({
+    upper: false,
+    lower: false,
+    number: false,
+    special: false,
+  });
+  const [password, setPassword] = useState((Math.floor(Math.random()*100000000000)));
   const handleRangeChange = (event) => {
     setCharacterLength(parseInt(event.target.value));
   };
 
-  const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-  const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const numberChars = "0123456789";
-  const specialChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+ 
   function passwordGenerate(lengthPass, lower, upper, number, special) {
     let pass = ""
     for (let i = 0; i < lengthPass; i++) {
@@ -38,23 +43,24 @@ export const Generator = () => {
 
     setPassword(pass.slice(0, lengthPass)) 
   }
-  const [count, setCount] = useState({
-    upper: false,
-    lower: false,
-    number: false,
-    special: false,
-  });
+  
 
   function getDifficulty() {
     const selectedOptions = Object.values(count).filter(Boolean).length; // Count selected checkboxes
-  if (characterLength <= 8 && selectedOptions <= 2) {
+  if (characterLength <= 8 && selectedOptions <= 2 && selectedOptions >= 0  ) {
     return "EASY";
-  } else if (characterLength <= 12 && selectedOptions >= 2 && selectedOptions <= 3) {
+  } else if (characterLength >= 8 && characterLength <=12 && selectedOptions >=2  && selectedOptions <= 3 ) {
     return "MEDIUM";
-  } else {
+  } else if(characterLength >=13 && selectedOptions >= 3) {
     return "HARD";
+
+  }
+  
+  else if(characterLength ){
+
   }
   } 
+
   let hardlevel = count.upper + count.lower + count.number + count.special 
   function getColor() {
     switch (hardlevel) {

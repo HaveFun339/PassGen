@@ -170,8 +170,11 @@ margin-right:10px ;
 }
 
 .difficulty {
+
     width: 310px;
     display: flex;
+    justify-content: space-between;
+    padding: 20px;
     margin: 20px 0px;
     height: 50px;
     background: #18171F;
@@ -197,14 +200,14 @@ margin-right:10px ;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 20px;
+   
 }
 
 .medium {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 70px;
+    
 }
 
 .facopy:hover {
