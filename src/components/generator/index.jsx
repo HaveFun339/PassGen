@@ -58,15 +58,15 @@ export const Generator = () => {
   } else if (characterLength >= 10 && characterLength <= 15  && selectedOptions >=2  && selectedOptions <=2 ) {
     return "MEDIUM";
   } 
-
-  else if(characterLength >=10 && selectedOptions >= 3) {
+  else if (characterLength >= 4 && characterLength <= 15  && selectedOptions >=2  && selectedOptions <=3 ) {
+    return "MEDIUM";
+  } 
+  else if(characterLength >=8 && selectedOptions >= 3) {
     return "HARD";
 
   }
-  else if(characterLength <=10 && selectedOptions >= 3) {
-    return "HARD";
-
-  }
+  
+  
  
   else if(characterLength ){
 
