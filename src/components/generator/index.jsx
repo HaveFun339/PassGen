@@ -47,15 +47,27 @@ export const Generator = () => {
 
   function getDifficulty() {
     const selectedOptions = Object.values(count).filter(Boolean).length; // Count selected checkboxes
-  if (characterLength <= 8 && selectedOptions <= 2 && selectedOptions >= 0  ) {
+   
+  if (characterLength <= 10 && selectedOptions <= 2 && selectedOptions >= 0  ) {
     return "EASY";
-  } else if (characterLength >= 8 && characterLength <=12 && selectedOptions >=2  && selectedOptions <= 3 ) {
+    
+  }
+  if (characterLength <= 15 && selectedOptions <= 1 && selectedOptions >= 0  ) {
+    return "EASY";
+    
+  } else if (characterLength >= 10 && characterLength <= 15  && selectedOptions >=2  && selectedOptions <=2 ) {
     return "MEDIUM";
-  } else if(characterLength >=13 && selectedOptions >= 3) {
+  } 
+
+  else if(characterLength >=10 && selectedOptions >= 3) {
     return "HARD";
 
   }
-  
+  else if(characterLength <=10 && selectedOptions >= 3) {
+    return "HARD";
+
+  }
+ 
   else if(characterLength ){
 
   }
